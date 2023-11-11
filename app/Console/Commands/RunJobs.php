@@ -28,6 +28,7 @@ class RunJobs extends Command
     {
         $jobs = Job::get();
         
+        
         foreach($jobs as $job){
             $exitCode = Artisan::call('queue:work', [
                 '--queue' => 'default', // Specify the queue name if needed

@@ -17,7 +17,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('app:run-jobs');
+        $schedule->command('app:run-jobs'); 
         // $schedule->command('inspire')->hourly();
         // Example: Checking for reservations half an hour away
         // $schedule->call(function () {
