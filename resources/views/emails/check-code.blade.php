@@ -58,13 +58,13 @@
 <div class="container">
     <div class="header">
         <img src="{{asset('dashboard_assets/Template.png')}}" alt="Company Logo">
-            <h1>أهلا وسهلا بك في تلبينة</h1>
+            <h1>أهلا وسهلا بك </h1>
     </div>
     <div class="content">
         <p>مرحبا,</p>
-        <p>شكرا لانضمامك لعائلة تلبينة  👋 .</p>
+        <p>شكرا لانضمامك   👋 .</p>
 
-        <p> كود التفعيل الخاص بك : <span class="otp">{{$emailData['message']}}</span></p>
+        <p> كود التفعيل الخاص بك : <span class="otp">{{$emailData['code']}}</span></p>
     </div>
     <p>تحياتنا </p>
     <p>Template 👋</p>
