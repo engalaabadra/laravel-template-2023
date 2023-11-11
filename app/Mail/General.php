@@ -9,6 +9,8 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
+
+
 class General extends Mailable
 {
     use Queueable, SerializesModels;
@@ -65,6 +67,8 @@ class General extends Mailable
         } 
         //  return new Envelope(subject: 'Check Code');
     }
+
+    
     /**
      * Build the message.
      *

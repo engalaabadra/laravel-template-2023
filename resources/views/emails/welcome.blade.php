@@ -3,6 +3,7 @@
     <title> Welcome </title>
 @endsection
 @section('main-container')
+
         <p>Dear  : {{$emailData['email']}}</p>
         <p>
             This is code : {{$emailData['message']}}
