@@ -22,10 +22,10 @@ class PasswordRepository  implements PasswordRepositoryInterface{
         if(is_string($objectCode)) return  $objectCode;
         $data=[
             'email'=>$data['email'],
-            'type'=>'check-code',
-            'code'=>$data['code']
+            'type'=>'welcome'
         ];
         app(SendingMessagesService::class)->sendingMessage($data);
+        
         return $objectCode;
 
     }

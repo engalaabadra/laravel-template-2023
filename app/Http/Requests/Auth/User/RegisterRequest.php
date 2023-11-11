@@ -74,7 +74,8 @@ class RegisterRequest extends FormRequest
             $result = app(ProccessCodesService::class)->processRegEmail($model,$request,$data['code']);
             $data=[
                 'email'=>$data['email'],
-                'type'=>'welcome'
+                'type'=>'check-code',
+                'code'=>$data['code']
             ];
             app(SendingMessagesService::class)->sendingMessage($data);
             if(is_string($result)) return $result;
