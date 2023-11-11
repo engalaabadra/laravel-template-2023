@@ -28,8 +28,7 @@ class SendingMessagesService
     }
     public function sendToEmail($data)
     {
-        Mail::to($data['email'])->send(new General($data));  
-
+         dispatch(new SendMessageJob($data)); 
     }
 
     public function sendToPhone($data,$msg)

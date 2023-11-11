@@ -33,6 +33,7 @@ class SendMessageJob implements ShouldQueue
     {        
         if($this->data['type']=='welcome' || $this->data['type']=='check-code' || $this->data['type']=='new-reservation' || $this->data['type']=='cancel-reservation' || $this->data['type']=='reminder-reservation' || $this->data['type']=='rescheduling-reservation'){
             Mail::to($this->email)->send(new General($this));  
+            
         } 
         return ;
     }
