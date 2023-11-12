@@ -2,6 +2,8 @@
 namespace Modules\Payment\Traits;
 
 trait PaymentTrait{
+
+
     public function setDataPayment($id,$data,$totalPrice){
         $user=authUser();
         $data['amount']= $totalPrice;
@@ -35,13 +37,17 @@ trait PaymentTrait{
             return $response;
         }
             return $response->transaction->url;
+
     }
+
 
     public function paymentProcessMethodReservation($id,$totalPrice){
         $data['redirect']['url']= url(route("api.payments.callback",[$id]));
         return $this->setDataPayment($id,$data,$totalPrice);
 
     }
+
+    
     
     public function paymentProcessMethodWallet($id,$totalPrice){
         $data['redirect']['url']= url(route("api.payments.callback-wallet",[$id,$totalPrice]));

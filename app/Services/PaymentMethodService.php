@@ -47,6 +47,7 @@ class PaymentMethodService{
        }
        return response()->json(['status' => false]);
     }
+
     public function dataPaymentCallback(){
         $headers= [
             "Content-Type:application/json",
@@ -68,6 +69,8 @@ class PaymentMethodService{
         return $response;
 
     }
+
+
     public function callback(){//type=1 : reservation , type=2 : wallet
         $response = $this->dataPaymentCallback();
         if(isset($response->errors)) return $response->errors;
@@ -98,6 +101,7 @@ class PaymentMethodService{
                 
             
     }
+    
     public function callbackWallet(){
         $response = $this->dataPaymentCallback();
         if(isset($response->errors)) return $response->errors;
