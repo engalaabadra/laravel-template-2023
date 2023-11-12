@@ -18,6 +18,7 @@ use Modules\Payment\Entities\PaymentLog;
 class PaymentMethodService{
         use ReservationTrait,PaymentTrait,MovementTrait,WalletMethods,WalletTrait;
 
+
     public function getDataPayment(){
         $token=getTokenPayment();
         $payment=Http::baseUrl('https://api.moyasar.com/v1')
@@ -37,6 +38,7 @@ class PaymentMethodService{
 
     }
 
+    
     public function getStatusTap($tapId){
         $url = "https://api.tap.company/v2/charges/".$tapId;
         $header = array(config('services.tap.secret'),'accept : application/json');
@@ -101,7 +103,7 @@ class PaymentMethodService{
                 
             
     }
-    
+
     public function callbackWallet(){
         $response = $this->dataPaymentCallback();
         if(isset($response->errors)) return $response->errors;
