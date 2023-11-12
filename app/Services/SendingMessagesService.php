@@ -9,7 +9,8 @@ use Twilio\Rest\Client;
 use Illuminate\Support\Facades\Http;
 use Modules\Payment\Traits\PaymentTrait;
 use App\Jobs\SendMessageJob;
-// use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\General;
 
 class SendingMessagesService
 {
@@ -28,7 +29,9 @@ class SendingMessagesService
     }
     public function sendToEmail($data)
     {
-         dispatch(new SendMessageJob($data)); 
+        Mail::to($data['email'])->send(new General($data));  
+
+        //  dispatch(new SendMessageJob($data)); 
     }
 
     public function sendToPhone($data,$msg)

@@ -24,18 +24,18 @@ class General extends Mailable
         $this->emailData['email']=$data['email'];
         $this->emailData['type']=$data['type'];
         $this->emailData['code'] =  $data['code'];
-        $this->emailData['role']= $data['role'];
-        $this->emailData['to']= $data['to'];
-        $this->emailData['user'] = $data['user'];
-        $this->emailData['user_birth_date'] = $data['user_birth_date'];
-        $this->emailData['doctor'] = $data['doctor'];
-        $this->emailData['reservation_date'] = $data['reservation_date'];
-        $this->emailData['reservation_start_time'] = $data['reservation_start_time'];
-        $this->emailData['reservation_end_time'] = $data['reservation_end_time'];
-        $this->emailData['reservation_problem'] = $data['reservation_problem'];
-        $this->emailData['old_reservation_start_time'] = $data['old_reservation_start_time'];
-        $this->emailData['old_reservation_end_time'] = $data['old_reservation_end_time'];
-        $this->emailData['old_reservation_date'] = $data['old_reservation_date'];
+        $this->emailData['role']= isset($data['role']) ? $data['role'] : null;
+        $this->emailData['to']= isset($data['to']) ? $data['to'] : null;
+        $this->emailData['user'] = isset($data['user']) ? $data['user'] : null;
+        $this->emailData['user_birth_date'] = isset($data['user_birth_date']) ? $data['user_birth_date'] : null;
+        // $this->emailData['doctor'] = $data['doctor'];
+        // $this->emailData['reservation_date'] = $data['reservation_date'];
+        // $this->emailData['reservation_start_time'] = $data['reservation_start_time'];
+        // $this->emailData['reservation_end_time'] = $data['reservation_end_time'];
+        // $this->emailData['reservation_problem'] = $data['reservation_problem'];
+        // $this->emailData['old_reservation_start_time'] = $data['old_reservation_start_time'];
+        // $this->emailData['old_reservation_end_time'] = $data['old_reservation_end_time'];
+        // $this->emailData['old_reservation_date'] = $data['old_reservation_date'];
 
    
     }

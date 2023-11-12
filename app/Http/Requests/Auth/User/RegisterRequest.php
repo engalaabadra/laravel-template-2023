@@ -15,6 +15,8 @@ use Modules\Wallet\Entities\Wallet;
 use ProccessCodesService;
 use App\Services\SendingMessagesService;
 use App\Services\MsegatSmsService;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\General;
 
 /**
  * Class RegisterRequest.
@@ -72,13 +74,14 @@ class RegisterRequest extends FormRequest
             if(is_string($result)) return $result;
         } if ($request->has('email')) {
             $result = app(ProccessCodesService::class)->processRegEmail($model,$request,$data['code']);
+            if(is_string($result)) return $result;
+            
             $data=[
                 'email'=>$data['email'],
                 'type'=>'check-code',
                 'code'=>$data['code']
             ];
             app(SendingMessagesService::class)->sendingMessage($data);
-            if(is_string($result)) return $result;
         }
         return $data;
     }
