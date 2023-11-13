@@ -1,0 +1,18 @@
+{
+    "Profile": true,
+    "Auth": true,
+    "Geocode": true,
+    "Board": true,
+    "Review": true,
+    "Favorite": true,
+    "Banner": true,
+    "Communication": true,
+    "Contact": true,
+    "Payment": true,
+    "Chat": true,
+    "Notification": true,
+    "Wallet":true,
+    "RequestWithdrawing":true,
+    "Movement":true
+
+}
